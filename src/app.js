@@ -47,15 +47,12 @@ const products = new ProdMongo()
 const carts = new CartMongo()
 const tickets = new TicketMongo()
 
-try {
-    await mongoose.connect(config.mongo_url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-    console.log('Conectado a MongoDB');
-} catch (error) {
-    console.error('Error de conexión a MongoDB:', error.message);
-}
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+    console.log('Conectado a MongoDB exitosamente');
+
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
