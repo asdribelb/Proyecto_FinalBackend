@@ -5,9 +5,9 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "nodemon ./src/app.js",
-        "dev": "nodemon src/app.js",
-        "test": "mocha ./src/test/*.test.js"
+        "start": "node ./src/app.js",
+        "dev": "nodemon ./src/app.js",
+         "test": "mocha ./src/test/*.test.js"
     },
     "keywords": [],
     "author": "",
