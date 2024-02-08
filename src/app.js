@@ -72,23 +72,11 @@ passport.use(
     })
 )
 
-
-
-//Mongo Atlas
-app.use(session({
-    store: MongoStore.create({
-        mongoUrl: "mongodb+srv://asdribelb:LIaLTms1Lcgdfohq@abellorin.mity2xr.mongodb.net/?retryWrites=true&w=majority",
-        mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true }, ttl: 3600
-    }),
-    secret: "ClaveSecreta",
-    resave: false,
-    saveUninitialized: false,
-}))
-
 // Iniciar el servidor después de todas las configuraciones
 httpServer.listen(PORT, () => {
     console.log(`Servidor Express Puerto: ${PORT}`);
 });
+
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
