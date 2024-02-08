@@ -1,0 +1,205 @@
+body {
+    background-color:rgb(183, 238, 248);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ajusta la altura al 100% de la ventana */
+}
+
+.acceso {
+    text-align: center; /* Alinea el texto en el centro */
+    margin-top: 10px; /* Espacio superior para separarlo del formulario */
+    text-decoration: none; /* Elimina el subrayado del enlace si es necesario */
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+a {
+    color: #a524c2;
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.detalle-prod {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+    box-shadow: 2px 2px 5px #888888;
+}
+
+.detalle-prod h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.detalle-prod p {
+    margin: 5px 0;
+}
+
+/* Estilos para el contenedor principal */
+
+
+.product {
+    width: 300px; /* Ancho del cuadro del producto */
+    padding: 40px;
+    border: 1px solid #c4c2c3;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    justify-content: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los productos */
+}
+
+
+.container2 {
+    display: flex;
+}
+.infoProd{
+    border: 2px solid white;
+    width: 48%;
+}
+
+.detallePro {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.detallePro th,
+.detallePro td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: left;
+}
+
+.detallePro th {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.detallePro tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.detallePro tr:hover {
+    background-color: #e2e6ea;
+}
+
+.product-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block; /* Para centrar el contenido horizontalmente */
+    text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+    box-shadow: 2px 2px 5px #888888;
+}
+
+
+.product-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Estilos para el formulario y su contenido */
+#productForm {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Ancho del formulario */
+}
+
+/* Estilos para los elementos del formulario */
+label, input, button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.pro {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    padding: 50px;
+  
+  }
+
+  /*Footer*/
+  
+  footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+}
+
+
+.texto {
+    display: grid;
+    text-align: center;
+}
+
+/* Derechos de autor */
+.texto p {
+    font-size: 14px;
+}
+
+

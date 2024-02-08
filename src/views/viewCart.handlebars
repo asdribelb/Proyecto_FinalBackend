@@ -1,0 +1,57 @@
+<!-- viewProducts.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Producto</title>
+    <!-- Agrega tus estilos CSS aquí -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Enlace para continuar comprando -->
+    <a href="/current">Seguir comprando</a>
+    
+    <!-- Título y descripción del carrito -->
+    Carrito de usuario {{user}}
+
+    <!-- Detalles de productos en el carrito -->
+    <div class="product-details">
+        <p>Carrito ID: {{carts._id}}</p>
+        <h2>Productos en el carrito:</h2>
+        <ul>
+            <!-- Iteración sobre cada producto en el carrito -->
+            {{#each carts.products}}
+                <li>
+                    <p>Producto ID: {{this.productId._id}}</p>
+                    <p>Descripción: {{this.productId.description}}</p>
+                    <p>Precio: ${{this.productId.price}}</p>
+                    <p>Cantidad: {{this.quantity}}</p>
+                    <p>Total Item: ${{this.total}}</p>
+                </li>
+            {{/each}}
+        </ul>
+        
+        <!-- Suma total de los productos en el carrito -->
+        <p>Suma Total: ${{calculateSumTotal carts.products}}</p>
+
+        <!-- Formulario para proceder al checkout -->
+        <form action="/checkout" method="GET">
+            <!-- Campos ocultos con información adicional -->
+            <input type="hidden" name="cartId" value="{{carts._id}}">
+            <input type="hidden" name="purchaser" value="{{user}}">
+            <input type="hidden" name="totalPrice" value="{{calculateSumTotal carts.products}}">
+            
+            <!-- Botón para completar la compra -->
+            <button type="submit">Completar Compra</button>
+        </form>
+    </div>
+
+    <!-- Agrega cualquier otro contenido que desees mostrar en la página -->
+
+    <!-- Pie de página -->
+    <footer>
+        <!-- Agrega contenido del pie de página si es necesario -->
+    </footer>
+</body>
+</html>

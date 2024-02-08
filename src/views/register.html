@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registerForm">
+        <label for="first_name">First name</label>
+        <input type="text" name="first_name" id="first_name" autocomplete="given-name">
+
+        <label for="last_name">Last name</label>
+        <input type="text" name="last_name" id="last_name" autocomplete="family-name">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" autocomplete="email">
+
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" autocomplete="age">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" autocomplete="new-password">
+
+        <label for="rol">Rol</label>
+        <select name="rol" id="rol" autocomplete="role">
+            <option value="admin">Admin</option>
+            <option value="usuario">Usuario</option>
+            <option value="premium">Premium</option>
+        </select>
+
+        <button type="submit">Register</button>
+    </form>
+    <a href="/">Volver</a>
+    <script src="/register.js"></script>
+</body>
+</html>

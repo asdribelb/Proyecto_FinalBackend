@@ -1,0 +1,71 @@
+<!-- viewProducts.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Producto</title>
+   
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Encabezado con título y enlace de regreso a la lista de productos -->
+    <header>
+        <h1>{{title}}</h1>
+        <a href="/current">Volver a la lista de productos</a>
+    </header>
+
+    <!-- Formulario para agregar productos al carrito -->
+    <form id="formAddProductInCart">
+        <div class="product-details">
+            <!-- Campos ocultos con información del producto -->
+            <p id="email" hidden>{{email}}</p>
+            <p id="id_prod">{{product._id}}</p>
+
+            <!-- Detalles del producto -->
+            <h2>{{product.description}}</h2>
+            <p>Precio: ${{product.price}}</p>
+            <p>Stock: {{product.stock}}</p>
+            <p>Categoría: {{product.category}}</p>
+            <p>Estado: {{product.availability}}</p>
+
+            <!-- Controles de cantidad -->
+            <div class="quantity-container">
+                <button type="button" class="quantity-btn" onclick="decrementQuantity()">-</button>
+                <p id="quantityValue">0</p>
+                <button type="button" class="quantity-btn" onclick="incrementQuantity()">+</button>
+            </div>
+
+            <!-- Botón para agregar al carrito -->
+            <button type="submit">Agregar al Carrito</button>
+        </div>
+    </form>
+
+    <footer>
+     
+    </footer>
+
+    <!-- Scripts para gestionar la cantidad y cargar scripts externos -->
+    <script>
+        let quantity = 0;
+
+        function incrementQuantity() {
+            quantity++;
+            updateQuantity();
+        }
+
+        function decrementQuantity() {
+            if (quantity > 0) {
+                quantity--;
+                updateQuantity();
+            }
+        }
+
+        function updateQuantity() {
+            document.getElementById('quantityValue').innerText = quantity;
+        }
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/detailProduct.js"></script>
+</body>
+</html>

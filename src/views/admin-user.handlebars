@@ -1,0 +1,88 @@
+<h1>USUARIOS DE ADMIN</h1>
+<div class="container">
+    <button id="backButton">Volver</button>
+    <div class="infoUser">
+        <h1>Lista de Productos</h1>
+        <div class="detalleUser">
+            <div id="usersContainer">
+                <ul>
+                    {{#each users}}
+                    <li data-name="{{this.first_name}}" data-email="{{this.email}}" data-rol="{{this.rol}}" data-id="{{this._id}}">
+                        Id: {{this._id}}<br>
+                        Nombre:{{this.first_name}}<br>
+                        Email: {{this.email}}<br>
+                        Rol: {{this.rol}}<br><br>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="formulario">
+        <h1>Formulario</h1>
+        <form id="user-form">
+            <input type="hidden" id="userId" name="userId">
+            <div class="inputs">
+                <div>
+                    <input type="text" id="name" autocomplete="off" placeholder="Ingrese Nombre" required>
+                    <input type="text" id="email" autocomplete="off" placeholder="Ingrese Email" required>
+                </div>
+                <div>
+                    <select name="rol" id="rol" id="rol" style="width: 200px;">
+                        <option value="admin" selected>Admin</option>
+                        <option value="usuario">Usuario</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+            </div>
+          
+            <div class="botones">
+                <button type="submit" id="btnCrear">Guardar</button>
+                
+                <input type="checkbox" id="eliminarUser" name="eliminarProducto">
+                Eliminar               
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    document.getElementById('backButton').addEventListener('click', accesoUser);
+    function accesoUser() {;
+        window.location.href = '/admin';
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtener referencia a la lista de productos y al formulario
+        const usersList = document.getElementById("usersContainer");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const rolInput = document.getElementById("rol");
+        const idInput = document.getElementById("userId");
+
+        // Agregar un evento de clic a la lista de productos
+        usersList.addEventListener("click", function (event) {
+            // Verificar si el clic fue en un elemento de la lista
+            const clickedElement = event.target;
+            if (clickedElement.tagName === "LI") {
+                // Obtener la información del producto desde los atributos del elemento de la lista
+                const name = clickedElement.getAttribute("data-name");
+                const email = clickedElement.getAttribute("data-email");
+                const rol = clickedElement.getAttribute("data-rol");
+                const userId = clickedElement.getAttribute("data-id");
+
+                // Actualizar los campos del formulario con la información del producto
+                nameInput.value = name;
+                emailInput.value = email;
+                for (let i = 0; i < rolInput.options.length; i++) {
+                if (rolInput.options[i].value === rol) {
+                    rolInput.selectedIndex = i;
+                    break;
+                }
+            }
+                idInput.value = userId;
+
+            }
+        });
+    });
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/realTimeUsers.js"></script>

@@ -1,0 +1,33 @@
+<!-- viewProducts.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Producto</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <a href="/current">Seguir comprando</a>
+    <div class="ticket-details">
+        <p>Ticket ID: {{tickets._id}}</p>
+        <h2>Compra realizada correctamente</h2>
+        <ul>
+            <li>
+                <strong>Resumen de Ticket</strong>
+                <p>Código: {{tickets.code}}</p>
+                <p>Fecha: {{tickets.purchase_datetime}}</p>
+                <p>Monto Total:{{tickets.amount}}</p>
+                <p>Comprador: {{tickets.purchaser}}</p>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
